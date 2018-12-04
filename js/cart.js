@@ -4,7 +4,7 @@ $(document).ready(function () {
   var parsed = getAllUrlParams( window.location.href );
   if ( parsed.listed != null && parsed.listed.length > 0 ) {
     // 리스트 검색으로 리다렉팅 (listed 파라메터 들고 가기)
-    window.location.href = "http://stackoverflow.com";
+    window.location.href = domain;
   }
   
   var cart = Cookies.get('cart');
