@@ -1,0 +1,1 @@
+var domain = "ssagaessagae.ga";
