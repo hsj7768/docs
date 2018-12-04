@@ -299,7 +299,7 @@ var searchApp = new Vue({
     df : 'btn btn-outline-secondary m-2'
     ,sc : 'btn btn-outline-info m-2 active'
     ,hide: false
-    ,baseurl: 'https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query='
+    ,baseurl: 'http://ssagaessagae.ga/'
     ,listed: [
     ]
     ,search: {
