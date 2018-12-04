@@ -4,7 +4,7 @@ var searchApp = new Vue({
     df : 'btn btn-outline-secondary m-2'
     ,sc : 'btn btn-outline-info m-2 active'
     ,display: ''
-    ,baseurl: domain + '/result?'
+    ,baseurl: '/result?'
     ,search: {
       simple : [
         {
