@@ -218,13 +218,15 @@ var searchApp = new Vue({
       this.clearAll( 'call' );
       
       var params = this.makeParams();
-      window.open( this.baseurl + params/*, '_blank'*/).focus();
+      //window.open( this.baseurl + params, '_blank').focus();
+      window.location.href = this.baseurl + params;
     }
     ,searchDetail() {
       this.clearAll( 'simple' );
       
       var params = this.makeParams();
-      window.open( this.baseurl + params/*, '_blank'*/).focus();
+      //window.open( this.baseurl + params, '_blank').focus();
+      window.location.href = this.baseurl + params;
     }
     ,clearAll( key ) {
       var list = this.search[key];
