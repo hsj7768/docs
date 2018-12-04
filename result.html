@@ -7,17 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">  
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <!-- nanumgothic web font -->
-  <style> 
-    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-    html,
-    body { 
-      font-family: nanumgothic !important;
-    },
-    .custom-control-input:checked~.custom-control-indicator{
-      color:white;
-    }
-  </style>
   
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -31,13 +20,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.js"></script>
   <!-- cookie -->
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-  <!-- requirejs -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
 </head>
 
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="http://ssagaessagae.ga">
       <img src="https://lh3.googleusercontent.com/aQhR9dEzHJ7ETPe-obFNV-bkg6WvY__VuOY6AbgW9VTeZpHuWuuKO-dfCIJuJgYUQw=s128" width="30" height="30" class="d-inline-block align-top" alt="">
       싸게싸게
     </a>
@@ -48,7 +35,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="http://ssagaessagae.ga/cart?cart=true"><strong><i class="fa fa-shopping-bag pr-1"></i>장바구니</strong></a>
+          <a class="nav-link" href="https://ssagaessagae.ga/cart"><strong><i class="fa fa-shopping-bag pr-1"></i>장바구니</strong></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://goo.gl/forms/5tuB1phddJ2kCeVt2" target="_blank"><strong><i class="fa fa-question-circle pr-1"></i></i>문의사항</a></strong>
@@ -60,19 +47,18 @@
   
   <div class="container pt-5" >
     <div class="row justify-content-md-center mb-5 mt-5">
-      <div :class="'col-12 col-md-4 align-items-end  ' + ( hide ? 'd-none' : '')" id="searchApp">
-        <div class="container" style="width: 230px;">
-
+      <div class="col-12 col-md-4 align-items-end" id="searchApp">
+        <div class="container">
           
-            <div class="row justify-content-md-center mb-3 mt-5">
+            <div class="row justify-content-md-center mb-3">
               <div class='col-12'>
                 <div class="card">
                 
                 <div class="card-body">
                   <p class="card-title"><strong>간편 검색</strong></p>
-                    <div v-for="(item, index) in search.simple">
+                    <div v-for="(item, index) in search.simple" class=" d-inline-block">
                       <label class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" v-model="item.checked">{{item.label}}</input>
+                          <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                           <span class="custom-control-indicator"></span>
                     </label>
                     </div>
@@ -80,9 +66,9 @@
                   
                   <div class="card-body">
                     <p class="card-title"><strong>통신사 선택</strong></p>                    
-                      <div v-for="(item, index) in search.agency">
+                      <div v-for="(item, index) in search.agency" class=" d-inline-block">
                         <label class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" v-model="item.checked">{{item.label}}</input>
+                          <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                           <span class="custom-control-indicator"></span>
                         </label>
                       </div>
@@ -90,9 +76,9 @@
                 
                   <div class="card-body">
                     <p class="card-title"><strong>망선택</strong></p>
-                    <div v-for="(item, index) in search.network">
+                    <div v-for="(item, index) in search.network" class=" d-inline-block">
                       <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" v-model="item.checked">{{item.label}}</input>
+                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                         <span class="custom-control-indicator"></span>
                       </label>
                     </div>
@@ -100,9 +86,9 @@
               
                   <div class="card-body">
                     <p class="card-title"><strong>데이터 선택</strong></p>
-                    <div v-for="(item, index) in search.data">
+                    <div v-for="(item, index) in search.data" class=" d-inline-block">
                       <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" v-model="item.checked">{{item.label}}</input>
+                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                         <span class="custom-control-indicator"></span>
                       </label>
                     </div>
@@ -110,9 +96,9 @@
         
                   <div class="card-body">
                     <p class="card-title"><strong>데이터 옵션</strong></p>
-                    <div v-for="(item, index) in search.datainfinity">
+                    <div v-for="(item, index) in search.datainfinity" class=" d-inline-block">
                       <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" v-model="item.checked">{{item.label}}</input>
+                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                         <span class="custom-control-indicator"></span>
                       </label>
                     </div>
@@ -120,23 +106,14 @@
       
                   <div class="card-body">
                     <h4 class="card-title">통화 선택</h4>
-                    <div v-for="(item, index) in search.call">
+                    <div v-for="(item, index) in search.call" class=" d-inline-block">
                       <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" v-model="item.checked">{{item.label}}</input>
+                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                         <span class="custom-control-indicator"></span>
                       </label>
                     </div>
                   </div>
                 
-                </div>
-              </div>
-            </div>
-
-  
-            <div class="row justify-content-md-center mb-5">
-              <div class='col-12'>
-                <div class="card">
-                <button type="button" class="btn btn-outline-primary" @click="searchDetail">요금제 찾기</button>
                 </div>
               </div>
             </div>
@@ -147,18 +124,6 @@
 
 <div class='col-12 col-md-6 align-self-top'>
         <div class="container" id="listApp">
-          
-          <div v-if="items.length != 0" class="row justify-content-md-center pt-4">
-            <div v-if="cartmode && carts != null && carts.length > 0" class="input-group">
-              <span class="input-group-btn">
-                <button class="btn btn-light" type="button">카트 공유</button>
-              </span>
-              <input id="linkinput" type="text" class="form-control" :value="'https://ssagaessagae.ga/result?listed=' + this.carts">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button" onClick="copyLink()">링크복사</button>
-              </span>
-            </div>
-          </div>
           
           <div v-if="items.length != 0" class="row justify-content-md-center pt-4">
             
