@@ -215,16 +215,12 @@ var searchApp = new Vue({
       this.clearAll( 'network' );
       this.clearAll( 'data' );
       this.clearAll( 'datainfinity' );
-      this.clearAll( 'call' );
-      
-      var params = this.makeParams();
-      window.open( this.baseurl + encodeURIComponent( params ), '_blank').focus();
+      this.clearAll( 'call' );      
+      window.location.href = 'https://ssagaessagae.ga/result?' + this.makeParams();
     }
     ,searchDetail() {
-      this.clearAll( 'simple' );
-      
-      var params = this.makeParams();
-      window.open( this.baseurl + encodeURIComponent( params ), '_blank').focus();
+      this.clearAll( 'simple' );      
+      window.location.href = 'https://ssagaessagae.ga/result?' + this.makeParams();
     }
     ,clearAll( key ) {
       var list = this.search[key];
