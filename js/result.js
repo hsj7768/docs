@@ -115,6 +115,7 @@ function setItems( filtered ) {
   listApp.scrollsCurrent = 0;
   listApp.items = filtered;
   
+  /*
   var url = "";
   if ( filtered.length > 0 ) {
     url += "?listed=";
@@ -125,6 +126,7 @@ function setItems( filtered ) {
   }
   
   history.pushState(null, null, url);
+  */
   loadMore();
 }
 
@@ -299,7 +301,6 @@ var searchApp = new Vue({
     df : 'btn btn-outline-secondary m-2'
     ,sc : 'btn btn-outline-info m-2 active'
     ,hide: false
-    ,baseurl: 'http://ssagaessagae.ga/'
     ,listed: [
     ]
     ,search: {
@@ -507,7 +508,11 @@ var searchApp = new Vue({
    }
   }
   ,methods: {
-    searchDetail() {
+    searchChecked( item ) {
+      item.checked = !item.checked;
+      this.searchDetail();
+    }
+    ,searchDetail() {
       var filted = items;
       
       var listed = this.listed;
@@ -521,7 +526,9 @@ var searchApp = new Vue({
         return;
       }
       
-      if ( this.search.simple[0].checked ) {
+      var simples = this.search.simple;
+      
+      if ( simples[0].id = 'infinity' && simples[0].checked ) {
         filted = filted.filter( function( item ) {
             if ( item.call < 0 ) {
               return true;
@@ -529,7 +536,7 @@ var searchApp = new Vue({
         });
       } 
       
-      if ( this.search.simple[1].checked ) {
+      if ( simples[1].id = 'cheap' && simples[1].checked ) {
         filted = filted.filter( function( item ) {
             if ( item.price <= 10000 ) {
               return true;
@@ -537,19 +544,19 @@ var searchApp = new Vue({
         });
       }
       
-      if ( this.search.simple[2].checked ) {
+      if ( simples[2].id = 'event' && simples[2].checked ) {
         filted = filted.filter( function( item ) {
-            if ( item.data_daily_offer ) {
-              return true;
-            } else if ( item.data_infinity ) {
+            if ( item.promotion ) {
               return true;
             }
         });
       }
       
-      if ( this.search.simple[3].checked ) {
+      if ( simples[3].id = 'data' && simples[3].checked ) {
         filted = filted.filter( function( item ) {
-            if ( item.promotion ) {
+            if ( item.data_daily_offer ) {
+              return true;
+            } else if ( item.data_infinity ) {
               return true;
             }
         });
