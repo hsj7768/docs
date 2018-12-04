@@ -37,7 +37,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="http://ssagaessagae.ga/cart?cart=true" target="_blank"><strong><i class="fa fa-shopping-bag pr-1"></i>장바구니</strong></a>
+          <a class="nav-link" href="http://ssagaessagae.ga/cart?cart=true"><strong><i class="fa fa-shopping-bag pr-1"></i>장바구니</strong></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://goo.gl/forms/5tuB1phddJ2kCeVt2" target="_blank"><strong><i class="fa fa-question-circle pr-1"></i></i>문의사항</a></strong>
@@ -101,7 +101,7 @@
                   </div>
                   
                   <div class="card-footer text-center">
-                    <a class="btn btn-outline-primary" role="button" :href="'http://ssagaessagae.ga/'+item.id" target="_blank">자세히 보기</a>
+                    <a class="btn btn-outline-primary" role="button" :href="'http://ssagaessagae.ga/detail?item='+item.id">자세히 보기</a>
                     <button class='btn btn-outline-primary' @click="carting( item.id )"><i class="fa fa-shopping-cart"></i> {{ carts.includes( item.id * 1 ) ? '빼기' : '담기' }}</button>
                   </div>
                   
@@ -116,7 +116,7 @@
                 <h4 class="display-3">장바구니가</h4>
                 <h4 class="display-3">비었군요</h4>
                 <p class="lead">장바구니에 담은 상품을 비교 할 수 있는 서비스를 준비중입니다.</p>
-                <a role="button" href="http://naver.com" target="_blank" class="btn btn-outline-primary">검색 페이지로 돌아가기</a>
+                <a role="button" href="http://ssagaessagae.ga" class="btn btn-outline-primary">검색 페이지로 돌아가기</a>
               </div>
             </div>
           </div>
