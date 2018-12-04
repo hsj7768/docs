@@ -4,7 +4,7 @@ var searchApp = new Vue({
     df : 'btn btn-outline-secondary m-2'
     ,sc : 'btn btn-outline-info m-2 active'
     ,display: ''
-    ,baseurl: 'https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query='
+    ,baseurl: domain + '/result?'
     ,search: {
       simple : [
         {
