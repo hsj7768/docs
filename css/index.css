@@ -2,4 +2,7 @@
 html,
 body {
   font-family: nanumgothic !important;
-}
+},
+.custom-control-input:checked~.custom-control-indicator{
+  color:white;
+}   
