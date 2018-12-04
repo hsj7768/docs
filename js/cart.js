@@ -1,11 +1,8 @@
+var domain = 'http://ssagaessagae.ga'
 var items;
 
 $(document).ready(function () {
   var parsed = getAllUrlParams( window.location.href );
-  if ( parsed.listed != null && parsed.listed.length > 0 ) {
-    // 리스트 검색으로 리다렉팅 (listed 파라메터 들고 가기)
-    window.location.href = domain;
-  }
   
   var cart = Cookies.get('cart');
   if ( cart ) {
@@ -35,6 +32,13 @@ $(document).ready(function () {
     }
   });
 });
+
+function copyLink() {
+  var copyText = document.getElementById("linkinput");
+  copyText.select();
+  document.execCommand("copy");  
+  alert('링크가 복사되었습니다. 공유해보세요!');
+}
 
 function getAllUrlParams( url ) {
   var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
