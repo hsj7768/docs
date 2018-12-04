@@ -176,7 +176,7 @@
                   
                   <div class="card-footer text-center">
                     <a class="btn btn-outline-primary" role="button" :href="'http://ssagaessagae.ga/detail?item='+item.id">자세히 보기</a>
-                    <button class='btn btn-outline-primary' @click="carting( item.id )"><i class="fa fa-shopping-cart"></i> {{ carts.includes( item.id * 1 ) ? '빼기' : '담기' }}</button>
+                    <button :class="'btn btn-outline-' + ( carts.includes( item.id * 1 ) ? 'success' : 'primary' )" @click="carting( item.id )"><i class="fa fa-shopping-cart"></i> {{ carts.includes( item.id * 1 ) ? '빼기' : '담기' }}</button>
                   </div>
                   
                 </div>
