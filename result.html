@@ -58,8 +58,98 @@
     <div class="row justify-content-md-center mb-5 mt-5">
       <div class="col-12 col-md-4 align-items-end" id="searchApp">
         <div class="container">
+
+          <div class="row justify-content-md-center mb-3 d-sm-block d-md-none">
+            <div class='col-12'>
           
-            <div class="row justify-content-md-center mb-3">
+            <div class="dropdown d-inline-block pt-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                간편
+              </button>
+              <div class="dropdown-menu pl-2">
+                <div v-for="(item, index) in search.simple" class=" d-inline-block">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
+                  <span class="custom-control-indicator"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="dropdown d-inline-block pt-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                통신사
+              </button>
+              <div class="dropdown-menu pl-2">
+                <div v-for="(item, index) in search.agency" class=" d-inline-block">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
+                  <span class="custom-control-indicator"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="dropdown d-inline-block pt-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                망
+              </button>
+              <div class="dropdown-menu pl-2">
+                <div v-for="(item, index) in search.network" class=" d-inline-block">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
+                  <span class="custom-control-indicator"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="dropdown d-inline-block pt-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                데이터
+              </button>
+              <div class="dropdown-menu pl-2">
+                <div v-for="(item, index) in search.data" class=" d-inline-block">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
+                  <span class="custom-control-indicator"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="dropdown d-inline-block pt-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                무제한
+              </button>
+              <div class="dropdown-menu pl-2">
+                <div v-for="(item, index) in search.datainfinity" class=" d-inline-block">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
+                  <span class="custom-control-indicator"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="dropdown d-inline-block pt-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                통화
+              </button>
+              <div class="dropdown-menu pl-2">
+                <div v-for="(item, index) in search.call" class=" d-inline-block">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
+                  <span class="custom-control-indicator"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            </div>
+          </div>
+          
+            <div class="row justify-content-md-center mb-3 d-none d-sm-none d-md-block">
               <div class='col-12'>
                 <div class="card">
                 
@@ -69,7 +159,7 @@
                       <label class="custom-control custom-checkbox">
                           <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
                           <span class="custom-control-indicator"></span>
-                    </label>
+                      </label>
                     </div>
                 </div>
                   
@@ -131,7 +221,7 @@
       </div>
 
 
-<div class='col-12 col-md-6 align-self-top'>
+      <div class='col-12 col-md-6 align-self-top'>
         <div class="container" id="listApp">
           
           <div v-if="items.length != 0" class="row justify-content-md-center pt-4">
