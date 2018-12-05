@@ -3,8 +3,6 @@ var items;
 $(document).ready(function () {
   var parsed = getAllUrlParams( window.location.href );
   
-  parsed.item = 1;
-  
   if ( parsed.item ) {
     getCSV(function () {
       var filted = items.filter( function( item ) {
