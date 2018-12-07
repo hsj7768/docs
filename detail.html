@@ -104,16 +104,16 @@
               </div>
               
               <div class="row justify-content-md-center ">
-                <div class='col-6 col-md-3 pt-2'>
+                <div class='col-6 pt-2'>
                   <a class="btn btn-outline-primary btn-block" role="button" :href="'tel:' + item.callcenter"><strong>전화:{{item.callcenter}}</strong></a>
                 </div>
-                <div class='col-6 col-md-3 pt-2'>
+                <div class='col-6 pt-2'>
                   <a class="btn btn-outline-primary btn-block" role="button" :href="item.homepage" target="_blank">홈페이지</a>
                 </div>
-                  <div class='col-6 col-md-3 pt-2'>
+                  <div class='col-6 pt-2'>
                     <button :class="'btn btn-block btn-outline-' + ( carts.includes( item.id * 1 ) ? 'success' : 'primary' )" @click="carting( item.id )"><i class="fa fa-shopping-cart"></i> {{ carts.includes( item.id * 1 ) ? '빼기' : '담기' }}</button>
                   </div>
-                  <div class='col-6 col-md-3 pt-2'>
+                  <div class='col-6 pt-2'>
                     <a role="button" class="btn btn-outline-warning btn-block" data-toggle="modal" data-target="#reportModal" data-whatever="@mdo"><strong class="text-warning"><i class="fa fa-exclamation-triangle"></i>신고</strong></a>
                   </div>
                 </div>
