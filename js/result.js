@@ -58,8 +58,8 @@ $(document).ready(function () {
 function copyLink() {
   var copyText = document.getElementById("linkinput");
   copyText.select();
-  document.execCommand("copy");  
-  alert('링크가 복사되었습니다. 공유해보세요!');
+  document.execCommand("copy");
+  createAlert('링크복사','','링크가 복사되었습니다. 공유해보세요','info',false,true,'pageMessages');
 }
 
 function getAllUrlParams( url ) {
@@ -572,7 +572,7 @@ var searchApp = new Vue({
         });
       }
       
-      if ( simples[4].id = 'data' && simples[4].checked ) {
+      if ( simples[4].id = 'card' && simples[4].checked ) {
         filted = filted.filter( function( item ) {
             if ( item.card1 ) {
               return true;
