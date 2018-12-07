@@ -26,6 +26,11 @@ var searchApp = new Vue({
           label: '데이터 무제한',
           id: 'data',
           checked: false,
+        },
+        {
+          label: '제휴카드',
+          id: 'card',
+          checked: false,
         }
       ]
       ,agency : [
