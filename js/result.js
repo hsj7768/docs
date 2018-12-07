@@ -109,7 +109,7 @@ function getCSV( callback ) {
     callback();
   });
   */
-  itesm = data;
+  items = data;
   callback();
 }
 
