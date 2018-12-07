@@ -325,6 +325,11 @@ var searchApp = new Vue({
           label: '데이터 무제한',
           id: 'data',
           checked: false,
+        },
+        {
+          label: '제휴카드',
+          id: 'card',
+          checked: false,
         }
       ]
       ,agency : [
@@ -556,6 +561,16 @@ var searchApp = new Vue({
       if ( simples[3].id = 'data' && simples[3].checked ) {
         filted = filted.filter( function( item ) {
             if ( item.data_daily_offer ) {
+              return true;
+            } else if ( item.data_infinity ) {
+              return true;
+            }
+        });
+      }
+      
+      if ( simples[4].id = 'data' && simples[4].checked ) {
+        filted = filted.filter( function( item ) {
+            if ( item.card1 ) {
               return true;
             } else if ( item.data_infinity ) {
               return true;
