@@ -14,20 +14,19 @@
   <title>싸게싸게 요금제 검색</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'libs/bootstrap/4.0.0-beta/css/bootstrap.min.css' %}">
-  <link href="{% static 'libs/fontawesome/css/all.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="/static/libs/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <link href="static/libs/fontawesome/css/all.css" rel="stylesheet">
     
-  <script src="{% static 'libs/jquery/3.2.1/jquery-3.2.1.min.js' %}"></script>
-  <script src="{% static 'libs/popper.js/1.12.3/umd/popper.min.js' %}"></script>
-  <script src="{% static 'libs/bootstrap/4.0.0-beta/js/bootstrap.min.js' %}"></script>
+  <script src="/static/libs/jquery/3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="/static/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="/static/libs/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
   <!-- feathericons -->
-  <script src="{% static 'libs/feather-icons/feather.min.js' %}"></script>
+  <script src="/static/libs/feather-icons/feather.min.js"></script>
   <!-- vue.js -->
-  <script src="{% static 'libs/vue/2.6.11/dist/vue.js' %}"></script>
+  <script src="/static/libs/vue/2.6.11/dist/vue.js"></script>
   <!-- csv -->
-  <script src="{% static 'libs/jquery-csv/0.8.9/jquery.csv.js' %}"></script>
+  <script src="/static/libs/jquery-csv/0.8.9/jquery.csv.js"></script>
 </head>
 
 <body>
@@ -180,12 +179,9 @@
       $('[data-toggle="tooltip"]').tooltip()
     })
   </script>
-  {% block extrahead %}
-  {% load static %}
-  <script src="{% static 'js/common.js' %}"></script>
-  <script src="{% static 'js/index.js' %}"></script>
-  <link src="{% static 'css/index.css' %}"></link>
-  {% endblock %}
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/index.js"></script>
+  <link src="/static/css/index.css"></link>
 </body>
 
 </html>
