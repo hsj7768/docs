@@ -1,4 +1,3 @@
-var domain = 'http://ssagaessagae.ga'
 var items;
 
 $(document).ready(function () {
@@ -8,17 +7,20 @@ $(document).ready(function () {
     listApp.carts = cart;
   });
   
-  getCSV( function() {
+  getCSV( function(data) {
+    items = data
+  //*
     if ( parsed.listed ) {
       var listed = parsed.listed.split(',');
       var filted = this.items.filter( function( item ) {
-        if ( listed.includes( item.id ) )
-          return true;        
+        if ( listed.includes( ''+item.id ) )
+          return true;
       });
       setItems( filted );
     }
+    //*/
   });
-  
+
   scrollCheck( loadMore );
 });
 
@@ -84,33 +86,12 @@ function getAllUrlParams( url ) {
   return obj;
 }
 
-function getCSV( callback ) {
-  var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWze7qOfMnYJC-KZBlSmLpmut8hARDX4zS_rAbRraECdgQ7GDVu5wOvqIu7uUrksyZoEzwH3Lt5K2K/pub?gid=562347642&single=true&output=csv"
-  $.get( url, function( data, status ) {
-    var json = $.csv.toObjects( data );    
-    items = json;
-    callback();
-  });
-}
-
 
 function setItems( filtered ) {
   listApp.scrolls = [];
   listApp.scrollsCurrent = 0;
   listApp.items = filtered;
-  
-  /*
-  // url 변경
-  var url = "";
-  if ( filtered.length > 0 ) {
-    url += "?listed=";
-    for ( i in filtered ) {
-      url += filtered[i].id + ',';
-    }
-    url = url.substring(0, url.length - 1);
-  }  
-  history.pushState(null, null, url);
-  */
+
   loadMore();
 }
 
