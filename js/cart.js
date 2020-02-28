@@ -1,15 +1,16 @@
-var domain = 'http://ssagaessagae.ga'
 var items;
 
 $(document).ready(function () {
   var parsed = getAllUrlParams( window.location.href );
-  
+
   var cart = Cookies.get('cart');
   if ( cart ) {
     cart = JSON.parse( cart );
   }
-  
-  getCSV( function() {
+
+  getCSV( function(data) {
+    items = data
+
     if ( cart != null ) {
       listApp.carts = cart;
       var filted = this.items.filter( function( item ) {
@@ -20,7 +21,7 @@ $(document).ready(function () {
       setItems( filted );
     }
   });
-  
+
   $(window).scroll(function() {
     var docHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
@@ -36,7 +37,7 @@ $(document).ready(function () {
 function copyLink() {
   var copyText = document.getElementById("linkinput");
   copyText.select();
-  document.execCommand("copy");  
+  document.execCommand("copy");
   alert('링크가 복사되었습니다. 공유해보세요!');
 }
 
@@ -78,21 +79,12 @@ function getAllUrlParams( url ) {
   return obj;
 }
 
-function getCSV( callback ) {
-  var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWze7qOfMnYJC-KZBlSmLpmut8hARDX4zS_rAbRraECdgQ7GDVu5wOvqIu7uUrksyZoEzwH3Lt5K2K/pub?gid=562347642&single=true&output=csv"
-  $.get( url, function( data, status ) {
-    var json = $.csv.toObjects( data );    
-    items = json;
-    callback();
-  });
-}
-
 
 function setItems( filtered ) {
   listApp.scrolls = [];
   listApp.scrollsCurrent = 0;
   listApp.items = filtered;
-  
+
   var url = "";
   if ( filtered.length > 0 ) {
     url += "?listed=";
@@ -101,7 +93,7 @@ function setItems( filtered ) {
     }
     url = url.substring(0, url.length - 1);
   }
-  
+
   history.pushState(null, null, url);
   loadMore();
 }
@@ -137,13 +129,13 @@ var listApp = new Vue({
     }
   }
   ,methods: {
-    checkCart( id ) {      
+    checkCart( id ) {
       var cookie = Cookies.get('cart');
       if ( cookie != null ) {
         var cart = JSON.parse( cookie );
         return cart.includes ( id*1 );
       }
-      
+
       return false;
     }
     ,carting( id ) {
@@ -154,16 +146,16 @@ var listApp = new Vue({
       } else {
         cart = JSON.parse( cookie );
       }
-      
+
       if ( this.checkCart( id ) ) {
         cart.splice( cart.indexOf( id*1 ), 1 );
       } else {
         cart.push (id*1);
       }
-      
+
       this.carts = cart;
       Cookies.set( 'cart', cart, { expires: 7 } );
-      
+
       var filted = this.items.filter( function( item ) {
         if ( cart.includes( item.id*1 ) ) {
           return true;
@@ -177,7 +169,7 @@ var listApp = new Vue({
       if ( sorttype == null ) {
         sorttype = getRadio( this['sorttype'] );
       }
-      
+
       // 정렬 필드
       if ( sorttype == 'price' ) {
         sorted.sort(function(a, b) {
@@ -192,7 +184,7 @@ var listApp = new Vue({
             return a['promotion_discount'] - b['promotion_discount'];
         });
       }
-      
+
       setItems( sorted );
     }
   }
