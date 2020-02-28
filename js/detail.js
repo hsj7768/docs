@@ -1,24 +1,6 @@
 var items;
 
-$(document).ready(function () {
-  var parsed = getAllUrlParams( window.location.href );
-  
-  var cart = Cookies.get('cart');
-  if ( cart ) {
-    detailApp.carts = JSON.parse( cart );
-  }
-  
-  if ( parsed.item ) {
-    getCSV(function () {
-      var filted = items.filter( function( item ) {
-        if ( parsed.item*1 == item.id*1 ) {
-          return true;
-        }
-      });
-      detailApp.item = filted[0];
-    });  
-  }
-});
+
 
 function getAllUrlParams( url ) {
   var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -58,16 +40,7 @@ function getAllUrlParams( url ) {
   return obj;
 }
 
-function getCSV( callback ) {
-  var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWze7qOfMnYJC-KZBlSmLpmut8hARDX4zS_rAbRraECdgQ7GDVu5wOvqIu7uUrksyZoEzwH3Lt5K2K/pub?gid=562347642&single=true&output=csv"
-  $.get( url, function( data, status ) {
-    var json = $.csv.toObjects( data );    
-    items = json;
-    callback();
-  });
-}
 
-  
 function filterById( selected ) {
   if ( items != null && items.length > 0 ) {
     var filted = items.filter( function( item ) {
@@ -78,7 +51,7 @@ function filterById( selected ) {
       }
     });
   }
-}; 
+};
 
 function telegram() {
   var url = "https://api.telegram.org/bot572309405:AAFIvvAIGOciZcnkzQHPqUaRoWPNebvULmg/sendMessage?chat_id=59644837&text=" + encodeURI( "[" + detailApp.id + "] [" + detailApp.title + "] \n" + detailApp.errorReportMessage );
@@ -88,6 +61,7 @@ function telegram() {
 }
 
 var detailApp = new Vue({
+  delimiters: ['${$', '$}$'],
   el: '#detailApp',
   data: {
     carts:[]
