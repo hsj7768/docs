@@ -85,6 +85,7 @@ var searchOptions = {
   ]
   ,data : [
     {
+      id: 'data0',
       label: '데이터 없음',
       field:'data',
       from: 0,
@@ -92,6 +93,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data1',
       label: '300M이하',
       field:'data',
       from: 1,
@@ -99,6 +101,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data2',
       label: '500M이하',
       field:'data',
       from: 301,
@@ -106,6 +109,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data3',
       label: '750M이하',
       field:'data',
       from: 501,
@@ -113,6 +117,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data4',
       label: '1G이하',
       field:'data',
       from: 751,
@@ -120,6 +125,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data5',
       label: '1.5G이하',
       field:'data',
       from: 1025,
@@ -127,6 +133,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data6',
       label: '2G이하',
       field:'data',
       from: 1537,
@@ -134,6 +141,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data7',
       label: '3G이하',
       field:'data',
       from: 2049,
@@ -141,6 +149,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data8',
       label: '6G이하',
       field:'data',
       from: 3073,
@@ -148,6 +157,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data9',
       label: '10G이하',
       field:'data',
       from: 6145,
@@ -155,6 +165,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'data10',
       label: '11G이상',
       field:'data',
       from: 10241,
@@ -164,18 +175,21 @@ var searchOptions = {
   ]
   ,datainfinity : [
     {
+      id: 'datainfinity0',
       label: '매일 제공',
       field:'data_daily_offer',
       matching:['1G', '2G', '5G'],
       checked: false
     },
     {
+      id: 'datainfinity1',
       label: '소진 후 2~10Mbps',
       field:'data_infinity',
       matching:['2Mbps', '3Mbps', '5Mbps', '10Mbps'],
       checked: false
     },
     {
+      id: 'datainfinity2',
       label: '소진 후 2~400Kbps',
       field:'data_infinity',
       matching:['200Kbps', '400Kbps'],
@@ -184,6 +198,7 @@ var searchOptions = {
   ]
   ,call : [
     {
+      id: 'call0',
       label: '통화 없음',
       field:'call',
       from: 0,
@@ -191,6 +206,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'call1',
       label: '60분이하',
       field:'call',
       from: 1,
@@ -198,6 +214,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'call2',
       label: '100분이하',
       field:'call',
       from: 61,
@@ -205,6 +222,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'call3',
       label: '180분이하',
       field:'call',
       from: 101,
@@ -212,6 +230,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'call4',
       label: '300분이하',
       field:'call',
       from: 181,
@@ -219,6 +238,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'call5',
       label: '330분이상',
       field:'call',
       from: 301,
@@ -226,6 +246,7 @@ var searchOptions = {
       checked: false
     },
     {
+      id: 'call6',
       label: '무제한',
       field:'call',
       from: -1,
