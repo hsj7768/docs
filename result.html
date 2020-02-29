@@ -10,7 +10,7 @@
     gtag('js', new Date());
     gtag('config', 'UA-130483453-1');
   </script>
-  
+ 
   <title>싸게싸게 검색 결과</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -96,9 +96,9 @@
               </button>
               <div class="dropdown-menu pl-2">
                 <div v-for="(item, index) in search.network" class="d-block pl-4">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                  <span class="custom-control-indicator"></span>
+                  <label>
+                    <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                    <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                   </label>
                 </div>
               </div>
