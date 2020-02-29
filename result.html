@@ -68,9 +68,9 @@
               </button>
               <div class="dropdown-menu pl-2">
                 <div v-for="(item, index) in search.simple" class=" d-inline-block">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                  <span class="custom-control-indicator"></span>
+                  <label>
+                    <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                    <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                   </label>
                 </div>
               </div>
@@ -82,9 +82,9 @@
               </button>
               <div class="dropdown-menu pl-2">
                 <div v-for="(item, index) in search.agency" class=" d-inline-block">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                  <span class="custom-control-indicator"></span>
+                  <label>
+                    <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                    <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                   </label>
                 </div>
               </div>
@@ -110,9 +110,9 @@
               </button>
               <div class="dropdown-menu pl-2">
                 <div v-for="(item, index) in search.data" class=" d-inline-block">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                  <span class="custom-control-indicator"></span>
+                  <label>
+                    <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                    <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                   </label>
                 </div>
               </div>
@@ -124,9 +124,9 @@
               </button>
               <div class="dropdown-menu pl-2">
                 <div v-for="(item, index) in search.datainfinity" class=" d-inline-block">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                  <span class="custom-control-indicator"></span>
+                  <label>
+                    <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                    <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                   </label>
                 </div>
               </div>
@@ -138,9 +138,9 @@
               </button>
               <div class="dropdown-menu pl-2">
                 <div v-for="(item, index) in search.call" class=" d-inline-block">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                  <span class="custom-control-indicator"></span>
+                  <label>
+                    <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                    <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                   </label>
                 </div>
               </div>
@@ -156,9 +156,9 @@
                 <div class="card-body">
                   <p class="card-title"><strong>간편 검색</strong></p>
                     <div v-for="(item, index) in search.simple" class=" d-inline-block">
-                      <label class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                          <span class="custom-control-indicator"></span>
+                      <label>
+                        <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                        <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                       </label>
                     </div>
                 </div>
@@ -166,9 +166,9 @@
                   <div class="card-body">
                     <p class="card-title"><strong>통신사 선택</strong></p>                    
                       <div v-for="(item, index) in search.agency" class=" d-inline-block">
-                        <label class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                          <span class="custom-control-indicator"></span>
+                        <label>
+                          <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                          <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                         </label>
                       </div>
                   </div>
@@ -176,9 +176,9 @@
                   <div class="card-body">
                     <p class="card-title"><strong>망선택</strong></p>
                     <div v-for="(item, index) in search.network" class=" d-inline-block">
-                      <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                        <span class="custom-control-indicator"></span>
+                      <label>
+                        <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                        <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                       </label>
                     </div>
                   </div>
@@ -186,9 +186,9 @@
                   <div class="card-body">
                     <p class="card-title"><strong>데이터 선택</strong></p>
                     <div v-for="(item, index) in search.data" class=" d-inline-block">
-                      <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                        <span class="custom-control-indicator"></span>
+                      <label>
+                        <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                        <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                       </label>
                     </div>
                   </div>
@@ -196,9 +196,9 @@
                   <div class="card-body">
                     <p class="card-title"><strong>데이터 옵션</strong></p>
                     <div v-for="(item, index) in search.datainfinity" class=" d-inline-block">
-                      <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                        <span class="custom-control-indicator"></span>
+                      <label>
+                        <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                        <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                       </label>
                     </div>
                   </div>
@@ -206,9 +206,9 @@
                   <div class="card-body">
                     <h4 class="card-title">통화 선택</h4>
                     <div v-for="(item, index) in search.call" class=" d-inline-block">
-                      <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" :checked="item.checked" @click="searchChecked( item )">{{item.label}}</input>
-                        <span class="custom-control-indicator"></span>
+                      <label>
+                        <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
+                        <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
                       </label>
                     </div>
                   </div>
