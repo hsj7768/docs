@@ -4,7 +4,7 @@ $(document).ready(function () {
   var parsed = getAllUrlParams( window.location.href );
   
   var search = parsed.search;
-  if ( search ) {
+  if ( search && search != true ) {
     var column = search.split(','); //simple_0,simple_1,simple_2,simple_3
     for ( i in column ) { 
       var key = column[i].split('_');
