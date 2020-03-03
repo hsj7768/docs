@@ -13,12 +13,29 @@
   <meta property="og:url" content="https://ssagae.shop/detail/334">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-130483453-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130483453-4');
+  </script>
+
+
+
+
   <link rel="stylesheet" href="/static/libs/bootstrap/4.1.3/css/bootstrap.min.css">
   <link href="/static/libs/fontawesome/css/all.css" rel="stylesheet">
 
   <script src="/static/libs/jquery/3.2.1/jquery-3.2.1.min.js"></script>
   <script src="/static/libs/popper.js/1.12.3/umd/popper.min.js"></script>
   <script src="/static/libs/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
   <!-- feathericons -->
   <script src="/static/libs/feather-icons/feather.min.js"></script>
@@ -28,6 +45,11 @@
   <script src="/static/libs/jquery-csv/0.8.9/jquery.csv.js"></script>
   <!-- cookie -->
   <script src="/static/libs/js-cookie%402/src/js.cookie.min.js"></script>
+  <style>
+    .sns-go {text-align:center; padding: 20px 0;}
+    .sns-go li {display:inline-block; margin: 0 5px; }
+    .sns-go li img {border-radius:50%;}
+  </style>
 </head>
 
 <body>
@@ -147,6 +169,12 @@
     
 
     
+
+    <div class="row justify-content-md-center">
+      <a id="kakao-link-btn" href="javascript:;">
+      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png">
+      </a>
+    </div>
 </div>
 
 
@@ -194,6 +222,49 @@
       })
 
   </script>
+
+  <script type="text/javascript">
+      //<![CDATA[
+        Kakao.init('ab8dc8914fe5e3e488858a974fb3b893');
+        Kakao.Link.createDefaultButton({
+          container: '#kakao-link-btn',
+          objectType: 'feed',
+          content: {
+            title: '싸게샵 - 보편 안심 15GB 100분',
+            description: '#알뜰폰 #요금제 #비교 #LG #헬로모바일',
+            imageUrl: 'https://ssagae.shop/preview/334.jpg',
+            link: {
+              mobileWebUrl: 'https://ssagae.shop/detail/334',
+              webUrl: 'https://ssagae.shop/detail/334'
+            }
+          },
+          social: {
+            likeCount: 286,
+            commentCount: 45,
+            sharedCount: 845
+          },
+          buttons: [
+            {
+              title: '웹으로 보기',
+              link: {
+                mobileWebUrl: 'https://ssagae.shop/detail/334',
+                webUrl: 'https://ssagae.shop/detail/334'
+              }
+            }
+            /*
+            ,{
+              title: '앱으로 보기',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                webUrl: 'https://developers.kakao.com'
+              }
+            }
+            */
+          ]
+        });
+      //]]>
+    </script>
+
   
   
   <script src="/static/js/common.js"></script>
