@@ -369,7 +369,8 @@ var searchApp = new Vue({
       if ( agency && agency.length > 0 ) {
         filted = filted.filter( function( item ) {
           for ( var i in agency ) {
-            return item.agency.toUpperCase() == agency[i].id.toUpperCase();
+            if (item.agency.toUpperCase() == agency[i].id.toUpperCase())
+              return true;
           }
         });
       }
