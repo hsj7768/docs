@@ -75,7 +75,7 @@
                 간편
               </button>
               <div class="dropdown-menu pl-2">
-                <div v-for="(item, index) in search.simple" class="d-block pl-4">
+                <div v-for="(item, index) in search.simples" class="d-block pl-4">
                   <label>
                     <input class="custom-control-input" type="checkbox" v-bind:id="item.id + '-' + index" :checked="item.checked" @click="searchChecked( item )"></input>
                     <label class="custom-control-label" v-bind:for="item.id + '-' + index">{{item.label}}
