@@ -6,9 +6,11 @@ $(document).ready(function () {
   var search = parsed.search;
   if ( search && search != true ) {
     var column = search.split(','); //simple_0,simple_1,simple_2,simple_3
-    for ( i in column ) { 
-      var key = column[i].split('_');
-      searchApp.search[ key[0] ] [ key[1] ].checked = true;
+    for ( i in column ) {
+      if (isEmpty(column[i]) == false) {
+        var key = column[i].split('_');
+        searchApp.search[ key[0] ] [ key[1] ].checked = true;
+      }
     }
   }
   
@@ -417,6 +419,41 @@ var searchApp = new Vue({
           }
         });
       }
+      
+      // 검색 조건 url에 저장
+      url_params = '?search='
+      for (var i = 0; i < simples.length; i++) {
+        if (simples[i].checked == true)
+            url_params += 'simple_' + i + ','
+      }
+
+      for (var i = 0; i < agency.length; i++) {
+        if (agency[i].checked == true)
+            url_params += 'agency_' + i + ','
+      }
+
+      for (var i = 0; i < network.length; i++) {
+        if (network[i].checked == true)
+            url_params += 'network_' + i + ','
+      }
+
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].checked == true)
+            url_params += 'data_' + i + ','
+      }
+
+      for (var i = 0; i < datainfinity.length; i++) {
+        if (datainfinity[i].checked == true)
+            url_params += 'datainfinity_' + i + ','
+      }
+
+      for (var i = 0; i < call.length; i++) {
+        if (call[i].checked == true)
+            url_params += 'call_' + i + ','
+      }
+
+      console.log(url_params)
+      window.history.replaceState({}, '', '/result'+url_params)
 
       setItems( filted );
     }
