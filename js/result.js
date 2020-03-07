@@ -338,8 +338,15 @@ var searchApp = new Vue({
             filted = filted.filter( function( item ) {
                 if ( item.data_daily_offer )
                   return true;
-                else if ( item.data_infinity )
+                else if ( item.data_infinity ) {
+                  if (item.data_infinity == '밀당') {
+                    return false;
+                  }
+                  if (item.data_infinity == '페이백') {
+                    return false;
+                  }
                   return true;
+                }
             })
 
         } else if (simple.id = 'card'   ) {
